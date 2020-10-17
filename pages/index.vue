@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <!-- <div>
       <Logo />
       <h1 class="title">nuxt-blog!!!!</h1>
       <div class="links">
@@ -21,7 +21,7 @@
           GitHub
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

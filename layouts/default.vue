@@ -1,11 +1,32 @@
 <template>
   <div>
+    <Header />
     <Nuxt />
   </div>
 </template>
 
-<style>
-html {
+<script>
+import Header from '../components/header'
+
+export default {
+  head(){
+    return{
+      title: 'текстовый тайтл',
+      meta:[
+        {
+          hid: 'describtion', name: 'describtion', content: 'text disc'
+        }
+      ]
+    }
+  },
+  components: {
+    Header,
+  }
+}
+</script>
+
+<style lang="scss">
+/* html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
@@ -51,5 +72,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>

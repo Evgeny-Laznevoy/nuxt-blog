@@ -12,6 +12,7 @@ export default {
       meta: [{ hid: 'description', name: 'description', content: 'Услуги' }],
     }
   },
+  layout: "main"
 }
 </script>
 

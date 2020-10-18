@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.use("/api/records", require("./routes/records"));
+app.use("/api/services", require("./routes/services"));
 app.use('/', express.static(path.join(__dirname, '../dist')));
 
 // Import and Set Nuxt.js options

@@ -2,6 +2,7 @@
   <div>
     <Header />
     <Nuxt />
+    123
   </div>
 </template>
 

@@ -10,17 +10,13 @@
             <nuxt-link class="menu__list-link" to="/services">Услуги</nuxt-link>
           </li>
           <li class="menu__list-item">
-            <nuxt-link class="menu__list-link" to="/developments"
-              >Разработки</nuxt-link
-            >
+            <nuxt-link class="menu__list-link" to="/developments">Разработки</nuxt-link>
           </li>
           <li class="menu__list-item">
             <nuxt-link class="menu__list-link" to="/blog">Блог</nuxt-link>
           </li>
           <li class="menu__list-item">
-            <nuxt-link class="menu__list-link" to="/contacts"
-              >Контакты</nuxt-link
-            >
+            <nuxt-link class="menu__list-link" to="/contacts">Контакты</nuxt-link>
           </li>
           <li class="menu__list-item">
             <nuxt-link class="menu__list-link" to="/wiki">Wiki</nuxt-link>
@@ -56,11 +52,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  max-width: 1200px;
-  padding: 0 10px;
-  margin: 0 auto;
-}
 
 .header {
   display: flex;
@@ -68,12 +59,16 @@ export default {
   background-color: #2b2a29;
   height: 60px;
   line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
 
   &__container {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    @include container;
 
     .menu {
       display: flex;
@@ -86,12 +81,20 @@ export default {
         align-items: center;
 
         &-item {
-            padding: 10px;
+          padding: 10px;
         }
 
         &-link {
-            text-decoration: none;
-            color: #ffffff;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:hover {
+            color: #c4c4c4;
+          }
+
+          &.nuxt-link-exact-active {
+            color: #a8a8a8;
+          }
         }
       }
     }
@@ -111,6 +114,8 @@ export default {
         display: flex;
         margin: auto;
         justify-content: space-between;
+        color: #df3333;
+        cursor: pointer;
 
         .tel {
           margin-right: 10px;

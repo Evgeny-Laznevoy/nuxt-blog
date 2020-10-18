@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="blog">
     <p>
         Блог
     </p>
@@ -21,5 +21,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .blog {
+    @include container;
+  }
 </style> 

@@ -1,7 +1,7 @@
 <template>
-<div>
-
-</div>
+  <div>
+    <p>Main</p>
+  </div>
   <!-- <div class="container">
     <div>
       <Logo />

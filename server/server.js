@@ -26,6 +26,9 @@ app.use(express.json());
 
 app.use("/api/records", require("./routes/records"));
 app.use("/api/services", require("./routes/services"));
+app.use("/api/blog", require("./routes/blog"));
+app.use("/api/wiki", require("./routes/wiki"));
+app.use("/api/theme", require("./routes/theme"));
 app.use('/', express.static(path.join(__dirname, '../dist')));
 
 // Import and Set Nuxt.js options

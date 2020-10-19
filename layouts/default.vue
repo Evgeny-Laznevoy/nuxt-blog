@@ -1,12 +1,14 @@
 <template>
   <div>
     <Header />
+    <SectionHead />
     <Nuxt />
   </div>
 </template>
 
 <script>
 import Header from '../components/header'
+import SectionHead from '../components/sectionHead'
 
 export default {
   head(){
@@ -21,6 +23,7 @@ export default {
   },
   components: {
     Header,
+    SectionHead,
   }
 }
 </script>

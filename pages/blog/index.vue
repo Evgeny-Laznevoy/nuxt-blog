@@ -17,12 +17,16 @@ export default {
         }
       ]
     }
+  },
+  components: {
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
   .blog {
-    @include container;
+    background-color: $black;
+    // @include container;
   }
 </style> 

@@ -56,7 +56,7 @@ export default {
 .header {
   display: flex;
   color: #ffffff;
-  background-color: #2b2a29;
+  background-color: $black;
   height: 60px;
   line-height: 1.5;
   font-size: 18px;

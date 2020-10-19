@@ -1,10 +1,12 @@
 <template>
   <div>
-    <p>Услуги</p>
+    {{data}}
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   head() {
     return {
@@ -12,7 +14,11 @@ export default {
       meta: [{ hid: 'description', name: 'description', content: 'Услуги' }],
     }
   },
-  layout: "main"
+  layout: 'main',
+  async asyncData() {
+    const { data } = await axios.get(`http://localhost:3000/api/services/`)
+    return { data }
+  },
 }
 </script>
 

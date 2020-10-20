@@ -1,40 +1,54 @@
 <template>
   <div class="main">
     <div class="main__page">
-      <div class="content">
-        <div class="content__main-columns">
-          <article class="post-id">
-            <nuxt-link class="article-link" to="/"></nuxt-link>
-            <div class="post-text">
-              <div class="post-title">
-                <h2 class="entry-title">Заголовок поста</h2>
-              </div>
-              <div class="entry-container">
-                <div class="entry-content">
-                  <p>Краткий текст поста информация</p>
-                  <div class="post-tool-block">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+      <div class="main-columns">
+        <div class="content" v-for="(post,i) in posts" :key="i">
+          <div class="content__main">
+            <article class="post-id">
+              <nuxt-link class="article-link" to="/"></nuxt-link>
+              <div class="post-text">
+                <div class="post-title">
+                  <h2 class="entry-title">
+                    Разбираем CSS в новом дизайне 
+                    Facebook: легаси, неочевидные решения и ответы разработчиков
+                  </h2>
+                </div>
+                <div class="entry-container">
+                  <div class="entry-content">
+                    <p>
+                      Недавно Facebook обновил дизайн. Ahmad Shadeed, UX/UI-дизайнер 
+                      и фронтенд-разработчик, разобрал CSS-файл сайта и поделился своими 
+                      находками. При этом некоторые решения команды разработчиков FB оказались 
+                      для него неочевидны, и он спросил их напрямую.
+                    </p>
+                    <div class="post-tool-block">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="entry-icon">
-              icon
-            </div>
-          </article>
+              <div class="entry-icon">
+                <img :src="`${sectionPostImg}`" class="section-post-img" alt="">
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-      <aside class="side-bar"></aside>
+      <aside class="sideBar">
+        <div class="sideBar__inner">
+          <WidgetText />
+        </div>
+      </aside>
     </div>
-    <!-- <p>
-        Блог
-    </p> -->
   </div>
 </template>
 
 <script>
+import sectionPostImg from '../../static/uploads/blog/iconfinder-css-news-cover-icon.png'
+import WidgetText from '../../components/widgetText'
+
 export default {
   head(){
     return{
@@ -47,8 +61,14 @@ export default {
     }
   },
   components: {
-
-  }
+    WidgetText
+  },
+  data() {
+    return {
+      sectionPostImg: sectionPostImg,
+      posts: 6,
+    }
+  },
 }
 </script>
 
@@ -59,7 +79,7 @@ export default {
     &__page {
       display: flex;
       padding-top: 10px;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
       align-items: flex-start;
 
       @include container;
@@ -68,7 +88,7 @@ export default {
         max-width: 900px;
         flex-grow: 1;
 
-        &__main-columns {
+        &__main {
           display: flex;
           align-items: stretch;
           flex-direction: row;
@@ -111,6 +131,7 @@ export default {
                 }
 
                 .entry-container {
+                  font-size: 17px;
                   .entry-content {
                     padding: 15px 50px 25px;
 
@@ -127,8 +148,35 @@ export default {
                   }
                 }
             }
+
+            .entry-icon {
+              display: flex;
+              min-width: 280px;
+              margin: 0;
+              align-items: center;
+              justify-content: center;
+              border-bottom-right-radius: 4px;
+              border-top-right-radius: 4px;
+              background-color: #CAAAA5;
+            }
           }
         }
+      }
+
+      .sideBar { 
+        width: 370px;
+        margin: 0;
+        display: block;
+        position: relative;
+        overflow: visible;
+        min-height: 1px;
+        box-sizing: border-box;
+
+          &__inner {
+            position: relative;
+            transform: none;
+            position: static;
+          }
       }
     }
     

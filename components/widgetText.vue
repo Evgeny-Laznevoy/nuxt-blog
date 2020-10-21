@@ -25,6 +25,15 @@ export default {
   data() {
       return {
           widgetImg: widgetImg,
+          persentage: 0,
+      }
+  },
+  props: {
+      maxHeight: {
+          type: Number,
+          default: () => {
+              return 0
+          }
       }
   },
   async asyncData() {
@@ -39,7 +48,6 @@ export default {
         padding: 15px;
         margin-bottom: 20px;
         position: relative;
-
         @include box;
 
         &__main {

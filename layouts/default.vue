@@ -24,7 +24,13 @@ export default {
   components: {
     Header,
     SectionHead,
-  }
+  },
+  // beforeMount () {
+  //   window.addEventListener('scroll', this.onScroll);
+  // },
+  // beforeDestroy() {
+  //   window.removeEventListener('scroll', this.onScroll);
+  // }
 }
 </script>
 

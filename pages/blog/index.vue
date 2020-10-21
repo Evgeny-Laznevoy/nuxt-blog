@@ -36,8 +36,8 @@
           </div>
         </div>
       </div>
-      <aside class="sideBar">
-        <div class="sideBar__inner">
+      <aside class="sideBar" >
+        <div class="sideBar__inner" :scroll="onScroll">
           <WidgetText />
         </div>
       </aside>
@@ -63,12 +63,32 @@ export default {
   components: {
     WidgetText
   },
+   methods: {
+      onScroll(event) {
+        let block = document.querySelector('.sideBar');
+        let position = block.getBoundingClientRect().y + window.scrollY;
+        // block.style.minHeight = position + 'px';
+        // console.log(position + window.scrollY);
+        // console.log(block.style.minHeight);
+
+        let blocInner = document.querySelector('.sideBar__inner');
+        blocInner.style.transform = 'translateY(' + window.scrollY +'px)'
+        // blocInner.style.position = 'fixed'
+        // blocInner.style.width = '370px'
+      }
+  },
+   beforeMount () {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
   data() {
     return {
       sectionPostImg: sectionPostImg,
       posts: 6,
     }
-  },
+  }
 }
 </script>
 
@@ -79,8 +99,9 @@ export default {
     &__page {
       display: flex;
       padding-top: 10px;
-      // flex-wrap: wrap;
       align-items: flex-start;
+      transform: none;
+      scroll-behavior: auto;
 
       @include container;
 
@@ -152,7 +173,7 @@ export default {
             .entry-icon {
               display: flex;
               min-width: 280px;
-              margin: 0;
+              // margin: 0;
               align-items: center;
               justify-content: center;
               border-bottom-right-radius: 4px;
@@ -165,7 +186,7 @@ export default {
 
       .sideBar { 
         width: 370px;
-        margin: 0;
+        // margin: 0;
         display: block;
         position: relative;
         overflow: visible;
@@ -173,9 +194,9 @@ export default {
         box-sizing: border-box;
 
           &__inner {
-            position: relative;
-            transform: none;
             position: static;
+            transform: none;
+            top: 0;
           }
       }
     }
